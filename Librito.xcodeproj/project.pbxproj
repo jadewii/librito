@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF56BABD2F3C214F1EDEB14B /* GlobalAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9847E5480A4A5396C4254 /* GlobalAudioManager.swift */; };
+		9EC6981A5309FB47461F0F96 /* InlinePDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E34F84C57472800E6F16588 /* InlinePDFReaderView.swift */; };
+		5C1D82D726902E1CFFDF411E /* PlaylistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B43DA987D8105010A20276 /* PlaylistService.swift */; };
+		5CFEA8BFB886DA5E9AF6D79B /* PlaylistSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A42DFA9B7D176956042D9 /* PlaylistSelectionView.swift */; };
+		F87D41FA573CEDEC9232E65F /* ContentModerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A8B5EE263CDC9AF9427181 /* ContentModerationService.swift */; };
+		96B20E6F3851A0238208AA8B /* ContentSafetySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE174464C66DDC539A23BB6A /* ContentSafetySettingsView.swift */; };
+		944BBA352812841778C4E521 /* InAppPDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EDE2E64FBD382E6BBB1A48 /* InAppPDFViewer.swift */; };
+		076380F0CD6FCC39A2F97809 /* ContentSafetyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF717649280D67D757A001CD /* ContentSafetyService.swift */; };
+		FCA73D944C54E85E6FCA6B2B /* OscilloscopeVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DAB6F600CC535E60EA7F5 /* OscilloscopeVisualizer.swift */; };
+		FCC5D1B975A999E624AD2D1E /* ContentClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D6FDC3D1F85AC80E994259 /* ContentClassification.swift */; };
+		90D3338040F100F69E5E0878 /* JournalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82117D3ED894D9A90D4BD568 /* JournalModels.swift */; };
+		0E78CC3860DDB2E54F183F08 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC504A2483C262BEA85B471 /* JournalView.swift */; };
+		112BAD9D104FC7040CC99BD5 /* JournalEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B077FD36FB83473FCA19F0 /* JournalEditor.swift */; };
+		D4E9539ABDFFF785EEE005BD /* NowPlayingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FB52E5866146EAD5181BF2 /* NowPlayingBar.swift */; };
+		DA8089BEFAF2EF39781AE6C4 /* NowPlayingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BB487EA2A43D41E7A3896 /* NowPlayingTransport.swift */; };
+		0F9026724BEC007AE7867F39 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF961640CDF2D72A593B21 /* AppStateManager.swift */; };
+		F1F4DDE6F9CEC09D28BC88D8 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EFFEBFFC156823DF01D419 /* MiniPlayerView.swift */; };
+		68E0FB19724FADE71BCCE27B /* ArchiveUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F7651FA70349CDF43419E /* ArchiveUploadManager.swift */; };
+		384F3F2A8903329CE68302F1 /* SocialHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2441E97F9301A4092FBDF2B /* SocialHubView.swift */; };
+		238D8E8D0689CA63DF1C54B5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70399011430DE2A62E632B27 /* UserProfileView.swift */; };
+		49DE6CFD9E13A1B6474CB5AD /* DecentralizedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2726A502FFC453730E3084 /* DecentralizedStorage.swift */; };
+		D321CD0F467C76FF302ECAC0 /* PremiumUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E34DFB5BDAC3652C64DC7 /* PremiumUpgradeView.swift */; };
+		0785E2392E36D6790048CD71 /* ADD_AUDIO_PLAYER_TO_XCODE.md in Resources */ = {isa = PBXBuildFile; fileRef = 0785E2382E36D6790048CD71 /* ADD_AUDIO_PLAYER_TO_XCODE.md */; };
+		07912F132E313DDE0016A08A /* MediaPlayerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07912F122E313DDE0016A08A /* MediaPlayerViews.swift */; };
+		A1B2C3D41A2B3C4D5E6F7890 /* LibritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D31A2B3C4D5E6F7890 /* LibritoApp.swift */; };
+		A1B2C3D51A2B3C4D5E6F7891 /* LibritoMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D41A2B3C4D5E6F7891 /* LibritoMainView.swift */; };
+		A1B2C3D61A2B3C4D5E6F7892 /* MyLibraryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D51A2B3C4D5E6F7892 /* MyLibraryContentView.swift */; };
+		A1B2C3D71A2B3C4D5E6F7893 /* ArchiveLibraryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D61A2B3C4D5E6F7893 /* ArchiveLibraryContentView.swift */; };
+		A1B2C3D81A2B3C4D5E6F7894 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D71A2B3C4D5E6F7894 /* BookModel.swift */; };
+		A1B2C3D91A2B3C4D5E6F7895 /* ArchiveOrgService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D81A2B3C4D5E6F7895 /* ArchiveOrgService.swift */; };
+		A1B2C3DC1A2B3C4D5E6F7898 /* MyLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DB1A2B3C4D5E6F7898 /* MyLibraryView.swift */; };
+		A1B2C3DD1A2B3C4D5E6F7899 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DC1A2B3C4D5E6F7899 /* AudioPlayerView.swift */; };
+		A1B2C3DF1A2B3C4D5E6F789B /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3DE1A2B3C4D5E6F789B /* RadioView.swift */; };
+		A1B2C3E11A2B3C4D5E6F789D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3E01A2B3C4D5E6F789D /* Styles.swift */; };
+		A1B2C3E81A2B3C4D5E6F78A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3E71A2B3C4D5E6F78A4 /* Assets.xcassets */; };
+		DA3C28EF808B49728B028A67 /* LibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC0573EDE38463F85392DD5 /* LibraryManager.swift */; };
+		22287AEF35A6485E9C163F99 /* StationDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AACAA667B4733B6C53B73 /* StationDownloadManager.swift */; };
+
+		61C947D388884B33B209AFD7 /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB209CF93E3484EAC16142B /* PremiumManager.swift */; };
+		469E5A3430A34C3BBEDDD109 /* SimpleStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DED9847E5480A4A5396C4254 /* GlobalAudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAudioManager.swift; sourceTree = "<group>"; };
+		0E34F84C57472800E6F16588 /* InlinePDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlinePDFReaderView.swift; sourceTree = "<group>"; };
+		C1B43DA987D8105010A20276 /* PlaylistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistService.swift; sourceTree = "<group>"; };
+		9A6A42DFA9B7D176956042D9 /* PlaylistSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSelectionView.swift; sourceTree = "<group>"; };
+		A1A8B5EE263CDC9AF9427181 /* ContentModerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModerationService.swift; sourceTree = "<group>"; };
+		FE174464C66DDC539A23BB6A /* ContentSafetySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSafetySettingsView.swift; sourceTree = "<group>"; };
+		F0EDE2E64FBD382E6BBB1A48 /* InAppPDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPDFViewer.swift; sourceTree = "<group>"; };
+		FF717649280D67D757A001CD /* ContentSafetyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSafetyService.swift; sourceTree = "<group>"; };
+		2C6DAB6F600CC535E60EA7F5 /* OscilloscopeVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscilloscopeVisualizer.swift; sourceTree = "<group>"; };
+		C3D6FDC3D1F85AC80E994259 /* ContentClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClassification.swift; sourceTree = "<group>"; };
+		82117D3ED894D9A90D4BD568 /* JournalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModels.swift; sourceTree = "<group>"; };
+		2AC504A2483C262BEA85B471 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		23B077FD36FB83473FCA19F0 /* JournalEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditor.swift; sourceTree = "<group>"; };
+		C2FB52E5866146EAD5181BF2 /* NowPlayingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingBar.swift; sourceTree = "<group>"; };
+		A51BB487EA2A43D41E7A3896 /* NowPlayingTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTransport.swift; sourceTree = "<group>"; };
+		97FF961640CDF2D72A593B21 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
+		18EFFEBFFC156823DF01D419 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
+		057F7651FA70349CDF43419E /* ArchiveUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadManager.swift; sourceTree = "<group>"; };
+		C2441E97F9301A4092FBDF2B /* SocialHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialHubView.swift; sourceTree = "<group>"; };
+		70399011430DE2A62E632B27 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		DA2726A502FFC453730E3084 /* DecentralizedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentralizedStorage.swift; sourceTree = "<group>"; };
+		5C8E34DFB5BDAC3652C64DC7 /* PremiumUpgradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumUpgradeView.swift; sourceTree = "<group>"; };
+		0785E2382E36D6790048CD71 /* ADD_AUDIO_PLAYER_TO_XCODE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ADD_AUDIO_PLAYER_TO_XCODE.md; sourceTree = "<group>"; };
+		07912F122E313DDE0016A08A /* MediaPlayerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViews.swift; sourceTree = "<group>"; };
+		A1B2C3D01A2B3C4D5E6F7800 /* Librito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Librito.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D31A2B3C4D5E6F7890 /* LibritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibritoApp.swift; sourceTree = "<group>"; };
+		A1B2C3D41A2B3C4D5E6F7891 /* LibritoMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibritoMainView.swift; sourceTree = "<group>"; };
+		A1B2C3D51A2B3C4D5E6F7892 /* MyLibraryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D61A2B3C4D5E6F7893 /* ArchiveLibraryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLibraryContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D71A2B3C4D5E6F7894 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		A1B2C3D81A2B3C4D5E6F7895 /* ArchiveOrgService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveOrgService.swift; sourceTree = "<group>"; };
+		A1B2C3DB1A2B3C4D5E6F7898 /* MyLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryView.swift; sourceTree = "<group>"; };
+		A1B2C3DC1A2B3C4D5E6F7899 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		A1B2C3DE1A2B3C4D5E6F789B /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		A1B2C3E01A2B3C4D5E6F789D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		A1B2C3E71A2B3C4D5E6F78A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CC0573EDE38463F85392DD5 /* LibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryManager.swift; sourceTree = "<group>"; };
+		F82AACAA667B4733B6C53B73 /* StationDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDownloadManager.swift; sourceTree = "<group>"; };
+
+		0DB209CF93E3484EAC16142B /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
+		E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStationDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3CD1A2B3C4D5E6F7880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3C71A2B3C4D5E6F7880 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D21A2B3C4D5E6F7880 /* Librito */,
+				A1B2C3E91A2B3C4D5E6F7880 /* Shared */,
+				A1B2C3D11A2B3C4D5E6F7880 /* Products */,
+				0785E2382E36D6790048CD71 /* ADD_AUDIO_PLAYER_TO_XCODE.md */
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D11A2B3C4D5E6F7880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D01A2B3C4D5E6F7800 /* Librito.app */
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D21A2B3C4D5E6F7880 /* Librito */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D31A2B3C4D5E6F7890 /* LibritoApp.swift */,
+				A1B2C3D41A2B3C4D5E6F7891 /* LibritoMainView.swift */,
+				A1B2C3D51A2B3C4D5E6F7892 /* MyLibraryContentView.swift */,
+				A1B2C3D61A2B3C4D5E6F7893 /* ArchiveLibraryContentView.swift */,
+				A1B2C3D71A2B3C4D5E6F7894 /* BookModel.swift */,
+				A1B2C3D81A2B3C4D5E6F7895 /* ArchiveOrgService.swift */,
+				A1B2C3DB1A2B3C4D5E6F7898 /* MyLibraryView.swift */,
+				A1B2C3DC1A2B3C4D5E6F7899 /* AudioPlayerView.swift */,
+				A1B2C3DE1A2B3C4D5E6F789B /* RadioView.swift */,
+				A1B2C3E01A2B3C4D5E6F789D /* Styles.swift */,
+				07912F122E313DDE0016A08A /* MediaPlayerViews.swift */,
+				A1B2C3E71A2B3C4D5E6F78A4 /* Assets.xcassets */,
+				DED9847E5480A4A5396C4254 /* GlobalAudioManager.swift */,
+				0E34F84C57472800E6F16588 /* InlinePDFReaderView.swift */,
+				C1B43DA987D8105010A20276 /* PlaylistService.swift */,
+				9A6A42DFA9B7D176956042D9 /* PlaylistSelectionView.swift */,
+				A1A8B5EE263CDC9AF9427181 /* ContentModerationService.swift */,
+				FE174464C66DDC539A23BB6A /* ContentSafetySettingsView.swift */,
+				F0EDE2E64FBD382E6BBB1A48 /* InAppPDFViewer.swift */,
+				FF717649280D67D757A001CD /* ContentSafetyService.swift */,
+				2C6DAB6F600CC535E60EA7F5 /* OscilloscopeVisualizer.swift */,
+				C3D6FDC3D1F85AC80E994259 /* ContentClassification.swift */,
+				82117D3ED894D9A90D4BD568 /* JournalModels.swift */,
+				2AC504A2483C262BEA85B471 /* JournalView.swift */,
+				23B077FD36FB83473FCA19F0 /* JournalEditor.swift */,
+				C2FB52E5866146EAD5181BF2 /* NowPlayingBar.swift */,
+				A51BB487EA2A43D41E7A3896 /* NowPlayingTransport.swift */,
+				97FF961640CDF2D72A593B21 /* AppStateManager.swift */,
+				18EFFEBFFC156823DF01D419 /* MiniPlayerView.swift */,
+				057F7651FA70349CDF43419E /* ArchiveUploadManager.swift */,
+				C2441E97F9301A4092FBDF2B /* SocialHubView.swift */,
+				70399011430DE2A62E632B27 /* UserProfileView.swift */,
+				DA2726A502FFC453730E3084 /* DecentralizedStorage.swift */,
+				5C8E34DFB5BDAC3652C64DC7 /* PremiumUpgradeView.swift */,
+				5CC0573EDE38463F85392DD5 /* LibraryManager.swift */,
+				F82AACAA667B4733B6C53B73 /* StationDownloadManager.swift */,
+
+				0DB209CF93E3484EAC16142B /* PremiumManager.swift */,
+				E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */,
+			);
+			path = "Librito";
+			sourceTree = "<group>";
+		};
+		A1B2C3E91A2B3C4D5E6F7880 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3EA1A2B3C4D5E6F7880 /* Core */,
+				A1B2C3EB1A2B3C4D5E6F7880 /* iOS */
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A1B2C3EA1A2B3C4D5E6F7880 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3EC1A2B3C4D5E6F7880 /* Models */,
+				A1B2C3ED1A2B3C4D5E6F7880 /* Stores */
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A1B2C3EB1A2B3C4D5E6F7880 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3EE1A2B3C4D5E6F7880 /* Stores */
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		A1B2C3EC1A2B3C4D5E6F7880 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B2C3ED1A2B3C4D5E6F7880 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		A1B2C3EE1A2B3C4D5E6F7880 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3CF1A2B3C4D5E6F7880 /* Librito */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3E91A2B3C4D5E6F7890 /* Build configuration list for PBXNativeTarget "Librito" */;
+			buildPhases = (
+				A1B2C3CC1A2B3C4D5E6F7880 /* Sources */,
+				A1B2C3CD1A2B3C4D5E6F7880 /* Frameworks */,
+				A1B2C3CE1A2B3C4D5E6F7880 /* Resources */
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Librito";
+			packageProductDependencies = (
+			);
+			productName = "Librito";
+			productReference = A1B2C3D01A2B3C4D5E6F7800 /* Librito.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3C81A2B3C4D5E6F7880 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					A1B2C3CF1A2B3C4D5E6F7880 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3CB1A2B3C4D5E6F7880 /* Build configuration list for PBXProject "Librito" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base
+			);
+			mainGroup = A1B2C3C71A2B3C4D5E6F7880;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A1B2C3D11A2B3C4D5E6F7880 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3CF1A2B3C4D5E6F7880 /* Librito */
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3CE1A2B3C4D5E6F7880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3E81A2B3C4D5E6F78A4 /* Assets.xcassets in Resources */,
+				0785E2392E36D6790048CD71 /* ADD_AUDIO_PLAYER_TO_XCODE.md in Resources */
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3CC1A2B3C4D5E6F7880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D41A2B3C4D5E6F7890 /* LibritoApp.swift in Sources */,
+				A1B2C3D51A2B3C4D5E6F7891 /* LibritoMainView.swift in Sources */,
+				A1B2C3D61A2B3C4D5E6F7892 /* MyLibraryContentView.swift in Sources */,
+				07912F132E313DDE0016A08A /* MediaPlayerViews.swift in Sources */,
+				A1B2C3D71A2B3C4D5E6F7893 /* ArchiveLibraryContentView.swift in Sources */,
+				A1B2C3D81A2B3C4D5E6F7894 /* BookModel.swift in Sources */,
+				A1B2C3D91A2B3C4D5E6F7895 /* ArchiveOrgService.swift in Sources */,
+				A1B2C3DC1A2B3C4D5E6F7898 /* MyLibraryView.swift in Sources */,
+				A1B2C3DD1A2B3C4D5E6F7899 /* AudioPlayerView.swift in Sources */,
+				A1B2C3DF1A2B3C4D5E6F789B /* RadioView.swift in Sources */,
+				A1B2C3E11A2B3C4D5E6F789D /* Styles.swift in Sources */,
+				BF56BABD2F3C214F1EDEB14B /* GlobalAudioManager.swift in Sources */,
+				9EC6981A5309FB47461F0F96 /* InlinePDFReaderView.swift in Sources */,
+				5C1D82D726902E1CFFDF411E /* PlaylistService.swift in Sources */,
+				5CFEA8BFB886DA5E9AF6D79B /* PlaylistSelectionView.swift in Sources */,
+				F87D41FA573CEDEC9232E65F /* ContentModerationService.swift in Sources */,
+				96B20E6F3851A0238208AA8B /* ContentSafetySettingsView.swift in Sources */,
+				944BBA352812841778C4E521 /* InAppPDFViewer.swift in Sources */,
+				076380F0CD6FCC39A2F97809 /* ContentSafetyService.swift in Sources */,
+				FCA73D944C54E85E6FCA6B2B /* OscilloscopeVisualizer.swift in Sources */,
+				FCC5D1B975A999E624AD2D1E /* ContentClassification.swift in Sources */,
+				90D3338040F100F69E5E0878 /* JournalModels.swift in Sources */,
+				0E78CC3860DDB2E54F183F08 /* JournalView.swift in Sources */,
+				112BAD9D104FC7040CC99BD5 /* JournalEditor.swift in Sources */,
+				D4E9539ABDFFF785EEE005BD /* NowPlayingBar.swift in Sources */,
+				DA8089BEFAF2EF39781AE6C4 /* NowPlayingTransport.swift in Sources */,
+				0F9026724BEC007AE7867F39 /* AppStateManager.swift in Sources */,
+				F1F4DDE6F9CEC09D28BC88D8 /* MiniPlayerView.swift in Sources */,
+				68E0FB19724FADE71BCCE27B /* ArchiveUploadManager.swift in Sources */,
+				384F3F2A8903329CE68302F1 /* SocialHubView.swift in Sources */,
+				238D8E8D0689CA63DF1C54B5 /* UserProfileView.swift in Sources */,
+				49DE6CFD9E13A1B6474CB5AD /* DecentralizedStorage.swift in Sources */,
+				D321CD0F467C76FF302ECAC0 /* PremiumUpgradeView.swift in Sources */,
+				DA3C28EF808B49728B028A67 /* LibraryManager.swift in Sources */,
+				22287AEF35A6485E9C163F99 /* StationDownloadManager.swift in Sources */,
+
+				61C947D388884B33B209AFD7 /* PremiumManager.swift in Sources */,
+				469E5A3430A34C3BBEDDD109 /* SimpleStationDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3E71A2B3C4D5E6F7880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BV35B44US2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)"
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C3E81A2B3C4D5E6F7880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BV35B44US2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B2C3EA1A2B3C4D5E6F7890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = BV35B44US2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks"
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jadewii.Librito";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		A1B2C3EB1A2B3C4D5E6F7890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = BV35B44US2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks"
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jadewii.Librito";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3CB1A2B3C4D5E6F7880 /* Build configuration list for PBXProject "Librito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3E71A2B3C4D5E6F7880 /* Debug */,
+				A1B2C3E81A2B3C4D5E6F7880 /* Release */
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3E91A2B3C4D5E6F7890 /* Build configuration list for PBXNativeTarget "Librito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3EA1A2B3C4D5E6F7890 /* Debug */,
+				A1B2C3EB1A2B3C4D5E6F7890 /* Release */
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3C81A2B3C4D5E6F7880 /* Project object */;
+}
