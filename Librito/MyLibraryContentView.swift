@@ -164,28 +164,8 @@ struct MyLibraryContentView: View {
                         BookGridView(filteredBooks: filteredBooks, selectedBook: $selectedBook, bookManager: bookManager)
                     }
                 } else {
-                    // Use the filtered grid for audiobooks tab
-                    if selectedMediaType == .audiobooks {
-                        ScrollView {
-                            LazyVGrid(columns: [
-                                GridItem(.adaptive(minimum: 180, maximum: 200), spacing: 20)
-                            ], spacing: 20) {
-                                ForEach(filteredBooks) { book in
-                                    AudiobookGridItem(
-                                        book: book,
-                                        bookManager: bookManager,
-                                        onTap: {
-                                            selectedBook = book
-                                        }
-                                    )
-                                }
-                            }
-                            .padding(.horizontal, 24)
-                            .padding(.bottom, 40)
-                        }
-                    } else {
-                        MyCollectionGridView(bookManager: bookManager)
-                    }
+                    // Use the same beautiful grid for all tabs
+                    BookGridView(filteredBooks: filteredBooks, selectedBook: $selectedBook, bookManager: bookManager)
                 }
             }
         }
@@ -205,20 +185,22 @@ struct BookGridView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 16) {
+            LazyVGrid(columns: [
+                GridItem(.flexible(), spacing: 16),
+                GridItem(.flexible(), spacing: 16),
+                GridItem(.flexible(), spacing: 16),
+                GridItem(.flexible(), spacing: 16)
+            ], spacing: 16) {
                 ForEach(filteredBooks) { book in
-                    ZStack {
-                        BookCard(book: book, bookManager: bookManager)
-                        
-                        // Invisible overlay for tap detection
-                        if [Book.FileType.mp3, .m4a, .ogg, .flac, .pdf].contains(book.fileType) {
-                            Color.clear
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    self.selectedBook = book
-                                }
+                    LibraryStyleBookCard(
+                        book: book,
+                        bookManager: bookManager,
+                        onTap: {
+                            if [Book.FileType.mp3, .m4a, .ogg, .flac, .pdf].contains(book.fileType) {
+                                selectedBook = book
+                            }
                         }
-                    }
+                    )
                 }
             }
             .padding(.horizontal, 24)
@@ -378,20 +360,22 @@ struct AudiobookGridItem: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 240)
                             .clipped()
-                    } else if book.fileName.contains("archive.org") || book.tags.contains("archive.org") {
-                        // Try to extract identifier from filename for Archive.org items
-                        AsyncImage(url: extractArchiveOrgThumbnail(from: book)) { image in
+                    } else {
+                        // Always try to get Archive.org thumbnail for audiobooks
+                        if let thumbnailURL = extractArchiveOrgThumbnail(from: book) {
+                            AsyncImage(url: thumbnailURL) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                         } placeholder: {
                             audiobookPlaceholder
-                        }
-                        .frame(height: 240)
-                        .clipped()
-                    } else {
-                        audiobookPlaceholder
+                            }
                             .frame(height: 240)
+                            .clipped()
+                        } else {
+                            audiobookPlaceholder
+                                .frame(height: 240)
+                        }
                     }
                     
                     // Audio indicator
@@ -451,6 +435,154 @@ struct AudiobookGridItem: View {
                 Text("AUDIOBOOK")
                     .font(.system(size: 12, weight: .medium))
                     .foregroundColor(.purple.opacity(0.8))
+            }
+        }
+    }
+    
+    private func extractArchiveOrgThumbnail(from book: Book) -> URL? {
+        // Try to extract Archive.org identifier from various sources
+        
+        // Method 1: Check tags for archive identifier
+        if let identifier = book.tags.first(where: { $0.hasPrefix("archive:") })?.replacingOccurrences(of: "archive:", with: "") {
+            return URL(string: "https://archive.org/services/img/\(identifier)")
+        }
+        
+        // Method 2: Look for common Archive.org audiobook identifiers in title
+        let title = book.title.lowercased()
+        
+        // Dr. Seuss books
+        if title.contains("cat in the hat") || title.contains("cat_in_the_hat") {
+            return URL(string: "https://archive.org/services/img/the_cat_in_the_hat")
+        }
+        if title.contains("green eggs") {
+            return URL(string: "https://archive.org/services/img/greeneggsandham00seus")
+        }
+        if title.contains("foot book") {
+            return URL(string: "https://archive.org/services/img/footbook00dr")
+        }
+        
+        // Philosophy/Stoic books
+        if title.contains("meditations") && (title.contains("marcus") || book.author.lowercased().contains("aurelius")) {
+            return URL(string: "https://archive.org/services/img/meditationsofmar00marc")
+        }
+        if title.contains("enchiridion") || (title.contains("epictetus") && title.contains("discourses")) {
+            return URL(string: "https://archive.org/services/img/discoursesofepic00epic")
+        }
+        
+        // Method 3: Try from filename patterns
+        let filename = book.fileName
+        
+        // Remove file extension
+        let nameWithoutExt = filename.replacingOccurrences(of: ".mp3", with: "")
+            .replacingOccurrences(of: ".m4a", with: "")
+            .replacingOccurrences(of: ".ogg", with: "")
+        
+        // If filename contains underscore, try first part
+        if nameWithoutExt.contains("_") {
+            let components = nameWithoutExt.components(separatedBy: "_")
+            if let identifier = components.first, !identifier.isEmpty {
+                return URL(string: "https://archive.org/services/img/\(identifier)")
+            }
+        }
+        
+        // Method 4: Try the whole filename without extension as identifier
+        if !nameWithoutExt.isEmpty && !nameWithoutExt.contains(" ") {
+            return URL(string: "https://archive.org/services/img/\(nameWithoutExt)")
+        }
+        
+        return nil
+    }
+}
+
+// MARK: - Library Style Book Card (matches Archive Library design)
+struct LibraryStyleBookCard: View {
+    let book: Book
+    @ObservedObject var bookManager: BookManager
+    let onTap: () -> Void
+    @State private var isHovered = false
+    
+    var body: some View {
+        Button(action: onTap) {
+            VStack(spacing: 0) {
+                // Cover image area
+                ZStack(alignment: .bottomTrailing) {
+                    if let coverImage = book.coverImage {
+                        coverImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 200)
+                            .clipped()
+                    } else if let archiveThumbUrl = extractArchiveOrgThumbnail(from: book) {
+                        AsyncImage(url: archiveThumbUrl) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                        } placeholder: {
+                            fileTypePlaceholder
+                        }
+                        .frame(height: 200)
+                        .clipped()
+                    } else {
+                        fileTypePlaceholder
+                            .frame(height: 200)
+                    }
+                    
+                    // Play button for audio files
+                    if [Book.FileType.mp3, .m4a, .ogg, .flac].contains(book.fileType) {
+                        Button(action: onTap) {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 40))
+                                .foregroundColor(.white)
+                                .background(Circle().fill(Color.black.opacity(0.6)))
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding(12)
+                        .opacity(isHovered ? 1.0 : 0.8)
+                    }
+                }
+                
+                // Info section with white background
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(book.title)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.black)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+                    
+                    Text(book.author)
+                        .font(.system(size: 12))
+                        .foregroundColor(.gray)
+                        .lineLimit(1)
+                }
+                .padding(8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color.white)
+            }
+            .background(Color.white)
+            .cornerRadius(8)
+            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            .scaleEffect(isHovered ? 1.02 : 1.0)
+            .animation(.easeInOut(duration: 0.2), value: isHovered)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .onHover { hovering in
+            isHovered = hovering
+        }
+    }
+    
+    private var fileTypePlaceholder: some View {
+        ZStack {
+            Rectangle()
+                .fill(book.fileType.color.opacity(0.1))
+            
+            VStack(spacing: 8) {
+                Image(systemName: book.fileType.icon)
+                    .font(.system(size: 40))
+                    .foregroundColor(book.fileType.color)
+                
+                Text(book.fileType.rawValue.uppercased())
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundColor(book.fileType.color.opacity(0.8))
             }
         }
     }
