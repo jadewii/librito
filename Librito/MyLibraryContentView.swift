@@ -164,7 +164,7 @@ struct MyLibraryContentView: View {
                         BookGridView(filteredBooks: filteredBooks, selectedBook: $selectedBook, bookManager: bookManager)
                     }
                 } else {
-                    BookGridView(filteredBooks: filteredBooks, selectedBook: $selectedBook, bookManager: bookManager)
+                    MyCollectionGridView(bookManager: bookManager)
                 }
             }
         }
