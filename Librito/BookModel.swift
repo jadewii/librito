@@ -106,7 +106,7 @@ class BookManager: ObservableObject {
     }
     
     // MARK: - Book Management
-    func addBook(title: String, author: String, fileData: Data, fileName: String, mode: String) -> Book? {
+    func addBook(title: String, author: String, fileData: Data, fileName: String, mode: String, tags: [String] = []) -> Book? {
         // Determine file type
         let fileType = determineFileType(from: fileName)
         
@@ -129,6 +129,7 @@ class BookManager: ObservableObject {
                 dateAdded: Date(),
                 totalPages: pageCount,
                 mode: mode,
+                tags: tags,
                 filePath: fileURL.path
             )
             

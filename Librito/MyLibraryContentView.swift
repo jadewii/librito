@@ -164,7 +164,28 @@ struct MyLibraryContentView: View {
                         BookGridView(filteredBooks: filteredBooks, selectedBook: $selectedBook, bookManager: bookManager)
                     }
                 } else {
-                    MyCollectionGridView(bookManager: bookManager)
+                    // Use the filtered grid for audiobooks tab
+                    if selectedMediaType == .audiobooks {
+                        ScrollView {
+                            LazyVGrid(columns: [
+                                GridItem(.adaptive(minimum: 180, maximum: 200), spacing: 20)
+                            ], spacing: 20) {
+                                ForEach(filteredBooks) { book in
+                                    AudiobookGridItem(
+                                        book: book,
+                                        bookManager: bookManager,
+                                        onTap: {
+                                            selectedBook = book
+                                        }
+                                    )
+                                }
+                            }
+                            .padding(.horizontal, 24)
+                            .padding(.bottom, 40)
+                        }
+                    } else {
+                        MyCollectionGridView(bookManager: bookManager)
+                    }
                 }
             }
         }
@@ -337,6 +358,119 @@ struct RadioContentView: View {
             
             Spacer()
         }
+    }
+}
+
+// MARK: - Audiobook Grid Item
+struct AudiobookGridItem: View {
+    let book: Book
+    @ObservedObject var bookManager: BookManager
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: onTap) {
+            VStack(spacing: 0) {
+                // Cover/Thumbnail with proper Archive.org support
+                ZStack(alignment: .bottomTrailing) {
+                    if let coverImage = book.coverImage {
+                        coverImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 240)
+                            .clipped()
+                    } else if book.fileName.contains("archive.org") || book.tags.contains("archive.org") {
+                        // Try to extract identifier from filename for Archive.org items
+                        AsyncImage(url: extractArchiveOrgThumbnail(from: book)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                        } placeholder: {
+                            audiobookPlaceholder
+                        }
+                        .frame(height: 240)
+                        .clipped()
+                    } else {
+                        audiobookPlaceholder
+                            .frame(height: 240)
+                    }
+                    
+                    // Audio indicator
+                    Image(systemName: "headphones.circle.fill")
+                        .font(.system(size: 32))
+                        .foregroundColor(.white)
+                        .background(Circle().fill(Color.black.opacity(0.7)))
+                        .padding(8)
+                }
+                .background(Color.gray.opacity(0.1))
+                
+                // Info section
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(book.title)
+                        .font(.system(size: 14, weight: .semibold))
+                        .lineLimit(2)
+                        .foregroundColor(.primary)
+                    
+                    Text(book.author)
+                        .font(.system(size: 12))
+                        .lineLimit(1)
+                        .foregroundColor(.secondary)
+                    
+                    if book.progress > 0 {
+                        HStack(spacing: 4) {
+                            ProgressView(value: book.progress)
+                                .progressViewStyle(LinearProgressViewStyle(tint: .purple))
+                                .scaleEffect(x: 1, y: 0.5)
+                            
+                            Text("\(book.progressPercentage)%")
+                                .font(.system(size: 10))
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.top, 4)
+                    }
+                }
+                .padding(12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color(UIColor.secondarySystemBackground))
+            }
+            .cornerRadius(12)
+            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+    
+    private var audiobookPlaceholder: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color.purple.opacity(0.1))
+            
+            VStack(spacing: 8) {
+                Image(systemName: "headphones")
+                    .font(.system(size: 48))
+                    .foregroundColor(.purple)
+                
+                Text("AUDIOBOOK")
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(.purple.opacity(0.8))
+            }
+        }
+    }
+    
+    private func extractArchiveOrgThumbnail(from book: Book) -> URL? {
+        // Try to extract Archive.org identifier from various sources
+        if let identifier = book.tags.first(where: { $0.hasPrefix("archive:") })?.replacingOccurrences(of: "archive:", with: "") {
+            return URL(string: "https://archive.org/services/img/\(identifier)")
+        }
+        
+        // Try from filename patterns
+        let filename = book.fileName
+        if filename.contains("_") {
+            let components = filename.components(separatedBy: "_")
+            if let identifier = components.first {
+                return URL(string: "https://archive.org/services/img/\(identifier)")
+            }
+        }
+        
+        return nil
     }
 }
 

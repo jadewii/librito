@@ -729,7 +729,8 @@ struct MyLibraryArchiveItemRow: View {
                             author: self.item.creator ?? "Unknown Author",
                             fileData: fileData,
                             fileName: downloadURL.lastPathComponent,
-                            mode: self.currentMode
+                            mode: self.currentMode,
+                            tags: ["archive:\(self.item.identifier)", "archive.org"]
                         )
                         print("Book added: \(book?.title ?? "Failed to add")")
                         self.isDownloading = false

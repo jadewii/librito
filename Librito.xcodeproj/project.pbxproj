@@ -47,6 +47,7 @@
 
 		61C947D388884B33B209AFD7 /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB209CF93E3484EAC16142B /* PremiumManager.swift */; };
 		469E5A3430A34C3BBEDDD109 /* SimpleStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */; };
+		5ABFAAD41AC24D1B92801A74 /* MyCollectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A490D5ADBD4848B948A9CA /* MyCollectionGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 
 		0DB209CF93E3484EAC16142B /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
 		E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStationDetailView.swift; sourceTree = "<group>"; };
+		37A490D5ADBD4848B948A9CA /* MyCollectionGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 
 				0DB209CF93E3484EAC16142B /* PremiumManager.swift */,
 				E5BE51F04AFB42199A029A9B /* SimpleStationDetailView.swift */,
+				37A490D5ADBD4848B948A9CA /* MyCollectionGridView.swift */,
 			);
 			path = "Librito";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 
 				61C947D388884B33B209AFD7 /* PremiumManager.swift in Sources */,
 				469E5A3430A34C3BBEDDD109 /* SimpleStationDetailView.swift in Sources */,
+				5ABFAAD41AC24D1B92801A74 /* MyCollectionGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
